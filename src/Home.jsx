@@ -1,6 +1,15 @@
 import Navbar from "./components/Navbar";
+import { motion } from "framer-motion";
 
 export default function Home() {
+  const images = [
+    "/assets/foto3.png",
+    "/assets/foto4.png",
+    "/assets/foto5.png",
+    "/assets/foto6.png",
+    "/assets/foto7.png",
+    "/assets/foto8.png",
+  ];
   return (
     <section className="flex flex-col">
       <Navbar />
@@ -11,17 +20,17 @@ export default function Home() {
             </h1>
             <button className="w-[210px] h-[210px]"><img src="./assets/btn1.png" alt="" /></button>
         </div>
-        <div className="flex flex-row items-center justify-between w-full h-[47px] px-32 pb-32 text-[24px]">
-            <p className="text-white w-[748px] h-[47px] font-normal">
+        <div className="flex flex-row items-center justify-between w-full h-[50px] px-32 pb-32 text-[24px] bg-gradient-to-t from-black to-transparent">
+            <p className="text-white w-[748px] h-[47px] font-sans">
               HomeStay syariah dengan view Danau Maninjau nan eksotis 
               dengan fasilitas yang lengkap,akses yang mudah dijangkau 
               dan harga yang ramah dikantong.</p>
             <button className="w-[210px] h-[210px]"><img src="./assets/btn2.png" alt="" /></button>
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center w-full h-[1000px] bg-[#FAF2E6]">
-        <div className="flex flex-col items-center justify-center w-full h-[500px] my-[300px]">
-          <h1 className="text-[64px] w-[560px] my-10 text-center">
+      <div className="flex flex-col items-center justify-center w-full bg-[#FAF2E6]">
+        <div className="flex flex-col items-center justify-center w-full py-40">
+          <h1 className="text-[64px] w-[560px] text-center">
             Selamat Datang di Palanta Homestay.
           </h1>
           <p className="w-[897px] text-center">
@@ -30,9 +39,64 @@ export default function Home() {
             Selamat datang di perjalanan penuh keindahan,selamat menikmati liburan anda.
           </p>
         </div>
-        <div className="flex flex-row items-center justify-between w-[1920px] h-[500px]">
+        <div className="bg-white flex flex-row items-center justify-between w-full ">
          <img src="./assets/foto1.png" alt="" />
          <img src="./assets/foto2.png" alt="" />
+        </div>
+      </div>
+      <div className="flex flex-col px-36 py-40">
+        <div className="flex flex-row items-center justify-between">
+          <h1 className="text-[49px] font-sans font-thin w-[311px]">
+            Facilities and Service
+          </h1>
+          <p className="text-[20px] text-end w-[727px] font-sans">
+            Temukan dunia di mana kenyamanan bertemu dengan ketenangan, di mana setiap momen adalah simfoni relaksasi dan kehalusan. 
+            Tempat perlindungan penuh kesederhanaan dan kenyamanan ,kami menanti kehadiran Anda.
+          </p>
+        </div>
+        <div className="overflow-hidden w-full py-20">
+              <motion.div
+                className="flex w-max gap-8"
+                animate={{ x: ["0%", "-100%"] }}
+                transition={{
+                  ease: "linear",
+                  duration: 40,
+                  repeat: Infinity,
+                }}
+              >
+                {[...images, ...images].map((src, index) => (
+                  <img key={index} src={src} alt="" className="w-100" />
+                ))}
+              </motion.div>
+          </div>
+      </div>
+      <div className="flex flex-row">
+        <div className="flex flex-col w-1/2 h-[590px] px-[140px] py-[100px] bg-[#FAF2E6]">
+          <ul className="flex flex-col items-start justify-start gap-6 w-full h-full">
+            <p className="text-[#A4A4A4]">Pages</p>
+            <button>Home</button>
+            <button>Rooms</button>
+            <button>Contact</button>
+          </ul>
+          <h1 className="text-[40px] font-sans font-thin">
+            Palanta Homestay
+          </h1>
+        </div>
+        <div className="flex flex-row px-[140px] py-[100px] w-1/2 h-[590px] gap-[251px]">
+          <ul className="flex flex-col gap-3">
+            <p className="text-[#A4A4A4]">Phone</p>
+            <p>08126638790 </p>
+            <p>081374224155</p>
+          </ul>
+          <ul className="flex flex-col gap-4">
+            <p className="text-[#A4A4A4]">Address</p>
+            <div className="flex flex-row gap-2">
+              <img src="./assets/logo.png" alt="" className="w-6 h-8"/>
+              <a href="https://maps.app.goo.gl/zb6LdgHomijWghcJ8">
+                P66G+3VW, Jl. Maninjau - Lubuk Basung, Maninjau, Kec. Tj. Raya, Kabupaten Agam, Sumatera Barat 26471
+              </a>
+            </div>
+          </ul>
         </div>
       </div>
       
