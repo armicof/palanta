@@ -37,13 +37,13 @@ export default function Home() {
   ];
 
   return (
-    <section className="flex flex-col overflow-hidden">
+      <section className="flex flex-col overflow-hidden">
       {/* Navbar */}
       <Navbar scrollToRef={scrollToRef} />
 
       {/* Bagian Home */}
-      <div ref={homeRef} className="bg-[url(./assets/bg1.png)]  bg-fixed flex flex-col items-end justify-between w-full">
-        <div className="flex flex-row items-center justify-between w-full h-[308px] px-32 border-b-2 border-white mt-[200px] text-[61px]">
+      <div ref={homeRef} className="bg-[url(./assets/bg1.png)]  bg-fixed flex flex-col items-end justify-between w-full h-[750px]">
+        <div className="flex flex-row items-center justify-between w-full h-[308px] px-32 border-b-2 border-white mt-[250px] text-[61px]">
           <h1 className="text-white w-[500px] h-[308px] font-sans font-thin">
             Pilihanmu untuk penginapan yang ramah dikantong
           </h1>
@@ -72,8 +72,8 @@ export default function Home() {
           </p>
         </div>
         <div className="bg-white flex flex-row items-center justify-between w-full">
-          <img src="./assets/tes1.png" alt="" />
-          <img src="./assets/tes2.png" alt="" />
+          <img src="./assets/foto1.png" alt="" />
+          <img src="./assets/foto2.png" alt="" />
         </div>
       </div>
 
@@ -109,9 +109,9 @@ export default function Home() {
         <div className="flex flex-col w-1/2 h-[590px] px-[140px] py-[100px] bg-[#FAF2E6]">
           <ul className="flex flex-col items-start justify-start gap-6 w-full h-full">
             <p className="text-[#A4A4A4]">Pages</p>
-            <button>Home</button>
-            <button>Rooms</button>
-            <button>Contact</button>
+            <button onClick={() => scrollToRef("home")}>Home</button>
+            <button onClick={() => scrollToRef("homestay")}>Rooms</button>
+            <button onClick={() => scrollToRef("contact")}>Contact</button>
           </ul>
           <h1 className="text-[40px] font-sans font-thin">Palanta Homestay.</h1>
         </div>
