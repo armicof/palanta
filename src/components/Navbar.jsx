@@ -10,12 +10,12 @@ const Navbar = ({ scrollToRef }) => {
       <button onClick={() => setMenuOpen(!menuOpen)} className="sm:hidden p-4">
         ☰
       </button>
-      <ul className={`${menuOpen ? 'block' : 'hidden'} sm:flex sm:items-center sm:justify-end sm:mx-6 sm:py-4`}>
+      <ul className={`${menuOpen ? 'block' : 'hidden'} items-center sm:flex sm:items-center sm:justify-end sm:mx-6 sm:py-4`}>
         <li className="block sm:inline-block mx-3 text-sm">
           <button onClick={() => { scrollToRef("home"); setMenuOpen(false); }}>Home</button>
         </li>
         <li className="block sm:inline-block mx-3 text-sm">
-          <button onClick={() => { scrollToRef("homestay"); setMenuOpen(false); }}>Our Homestay</button>
+          <button onClick={() => { scrollToRef("homestay"); setMenuOpen(false);}}>Homestay</button>
         </li>
         <li className="block sm:inline-block mx-3 text-sm">
           <button onClick={() => { scrollToRef("contact"); setMenuOpen(false); }}>Contact</button>
