@@ -16,7 +16,7 @@ export default function Home() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+
   const scrollToRef = (target) => {
     let ref;
     switch (target) {
@@ -35,6 +35,9 @@ export default function Home() {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const back = [
+    "/assets/bg1.png",
+  ]
   const images = [
     "/assets/foto3.png",
     "/assets/foto4.png",
@@ -50,7 +53,8 @@ export default function Home() {
 
       <div
         ref={homeRef}
-        className="bg-[url(./assets/bg1.png)] bg-fixed flex flex-col items-center justify-between mt-10 w-full h-[750px] sm:bg-cover bg-center "
+        style={{ backgroundImage: `url(${back[0]})` }}
+        className="bg-fixed flex flex-col items-center justify-between mt-10 w-full h-[750px] sm:bg-cover bg-center "
       >
         <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-3 px-8 sm:px-16 md:px-32 py-10 border-b-2 border-white mt-[150px] sm:mt-[100px] text-[32px] sm:text-[48px] md:text-[61px] text-center sm:text-left">
           <h1 className="text-white max-w-[500px] font-sans font-thin">
