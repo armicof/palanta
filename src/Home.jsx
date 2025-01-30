@@ -37,25 +37,25 @@ export default function Home() {
   ];
 
   return (
-    <section className="flex flex-col">
+    <section className="flex flex-col overflow-hidden">
       {/* Navbar */}
       <Navbar scrollToRef={scrollToRef} />
 
       {/* Bagian Home */}
-      <div ref={homeRef} className="bg-[url(./assets/bg1.png)] bg-fixed flex flex-col items-end justify-between w-full h-[1100px]">
-        <div className="flex flex-row items-center justify-between w-full h-[308px] px-32 border-b-2 border-white mt-[600px] text-[61px]">
+      <div ref={homeRef} className="bg-[url(./assets/bg1.png)]  bg-fixed flex flex-col items-end justify-between w-full">
+        <div className="flex flex-row items-center justify-between w-full h-[308px] px-32 border-b-2 border-white mt-[200px] text-[61px]">
           <h1 className="text-white w-[500px] h-[308px] font-sans font-thin">
             Pilihanmu untuk penginapan yang ramah dikantong
           </h1>
-          <button className="w-[210px] h-[210px]">
+          <button onClick={() => scrollToRef("contact")} className="w-[210px] h-[210px]">
             <img src="./assets/btn1.png" alt="" />
           </button>
         </div>
-        <div className="flex flex-row items-center justify-between w-full h-[50px] px-32 pb-32 text-[24px] bg-gradient-to-t from-black to-transparent">
+        <div className="flex flex-row items-center justify-between w-full h-[50px] px-32 pb-32 pt-16 text-[24px] bg-gradient-to-t from-black to-transparent">
           <p className="text-white w-[748px] h-[47px] font-sans">
             HomeStay syariah dengan view Danau Maninjau nan eksotis dengan fasilitas yang lengkap, akses yang mudah dijangkau dan harga yang ramah dikantong.
           </p>
-          <button className="w-[210px] h-[210px]">
+          <button onClick={() => scrollToRef("homestay")} className="w-[210px] h-[210px]">
             <img src="./assets/btn2.png" alt="" />
           </button>
         </div>
@@ -78,7 +78,7 @@ export default function Home() {
       </div>
 
       {/* Bagian Facilities and Service */}
-      <div ref={homestayRef} className="flex flex-col px-36 py-40">
+      <div ref={homestayRef} className="flex flex-col px-36 py-28">
         <div className="flex flex-row items-center justify-between">
           <h1 className="text-[49px] font-sans font-thin w-[311px]">
             Facilities and Service
@@ -98,7 +98,7 @@ export default function Home() {
             }}
           >
             {[...images, ...images].map((src, index) => (
-              <img key={index} src={src} alt="" className="w-100" />
+              <img key={index} src={src} alt="" className="w-48" />
             ))}
           </motion.div>
         </div>
